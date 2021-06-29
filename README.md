@@ -93,13 +93,10 @@
 
 ## BERT
 #### Code-Snippet for BERT Features:
-	from bertviz import head_view  
-	from transformers import BertTokenizer, BertModel, AutoTokenizer, AutoModel, BertConfig, BertForSequenceClassification, BertForNextSentencePrediction  
-  
-
-	config = BertConfig.from_pretrained("scsmuhio/TeBertConfig",output_attentions=True)  
-	tokenizer = AutoTokenizer.from_pretrained("scsmuhio/TeBert")  
-	model = AutoModel.from_pretrained("scsmuhio/pytorch_model_task.bin",config=config)  
+	from transformers import AutoTokenizer, AutoModelForMaskedLM 
+	tokenizer = AutoTokenizer.from_pretrained("ltrctelugu/bert_ltrc_telugu")
+	model = AutoModelForMaskedLM.from_pretrained("ltrctelugu/bert_ltrc_telugu")  
+	
 	# sentence here is in WX format
 	sentence_a = "pilli cApa mIxa kUrcuMxi"
 	
@@ -111,17 +108,14 @@
 	text_features.append(np.mean(output,axis=1))
 
 * "transformers" module can be downloaded from "https://github.com/huggingface/transformers"
-* bertviz module can be downloaded from "https://github.com/jessevig/bertviz"
 
 
 ## ALBERT
 #### Code-Snippet for ALBERT Features:  
-	
-	from bertviz import head_view
 	from transformers import AlbertTokenizer, AlbertModel,AutoTokenizer, AutoModelWithLMHead
 
-	model = AlbertModel.from_pretrained('scsmuhio/TeAlbert', output_attentions=True)
-	tokenizer = AlbertTokenizer.from_pretrained('scsmuhio/TeAlbert')
+	model = AlbertModel.from_pretrained('subbareddyiiit/TeAlbert', output_attentions=True)
+	tokenizer = AlbertTokenizer.from_pretrained('subbareddyiiit/TeAlbert')
 
 	# sentence here is in WX format
 	sentence_a = "pilli cApa mIxa kUrcuMxi"
@@ -134,16 +128,14 @@
 	text_features.append(np.mean(output,axis=1))
 
 * "transformers" module can be downloaded from "https://github.com/huggingface/transformers"
-* bertviz module can be downloaded from "https://github.com/jessevig/bertviz"
 
 ## RoBERTa
 #### Code-Snippet for RoBERTa Features:
 
 	from transformers import RobertaModel, RobertaTokenizer
-	from bertviz import head_view
 
-	model = RobertaModel.from_pretrained('scsmuhio/TeRobeRta', output_attentions=True)
-	tokenizer = RobertaTokenizer.from_pretrained('scsmuhio/TeRobeRta')
+	model = RobertaModel.from_pretrained('subbareddyiiit/TeRobeRta', output_attentions=True)
+	tokenizer = RobertaTokenizer.from_pretrained('subbareddyiiit/TeRobeRta')
 
 	# sentence here is in WX format	
 	sentence_a = "pilli cApa mIxa kUrcuMxi"
@@ -156,16 +148,14 @@
 	text_features.append(np.mean(output,axis=1))
 
 * "transformers" module can be downloaded from "https://github.com/huggingface/transformers"
-* bertviz module can be downloaded from "https://github.com/jessevig/bertviz"
 
 ## ELECTRA
 #### Code-Snippet for ELECTRA Features:
 	from transformers import ElectraModel,ElectraConfig, ElectraTokenizer, ElectraForMaskedLM
-	from bertviz import head_view
 	
-	config = ElectraConfig.from_pretrained("scsmuhio/TeElectra")
-	tokenizer = ElectraTokenizer.from_pretrained("scsmuhio/TeElectra",output_attentions=True)
-	model = ElectraModel.from_pretrained("scsmuhio/TeElectra",config=config)
+	config = ElectraConfig.from_pretrained("subbareddyiiit/TeElectra")
+	tokenizer = ElectraTokenizer.from_pretrained("subbareddyiiit/TeElectra",output_attentions=True)
+	model = ElectraModel.from_pretrained("subbareddyiiit/TeElectra",config=config)
 	
 	# sentence here is in WX format
 	sentence_a = "pilli cApa mIxa kUrcuMxi"
@@ -178,4 +168,3 @@
 
 
 * "transformers" module can be downloaded from "https://github.com/huggingface/transformers"
-* bertviz module can be downloaded from "https://github.com/jessevig/bertviz"
